@@ -49,9 +49,15 @@ void Vectors_Explained()
     {
         cout << it << " ";
     }
-    /*
+
     vector<int> v = {1, 2, 3, 4, 5};
-    v.erase(v.begin() + 2); // {1,2,4,5}
+    v.erase(v.begin() + 2);                // {1,2,4,5}
     v.erase(v.begin() + 2, v.begin() + 4); // {1,2,5}    // [begin, end)
-    */
+
+    // Insertion Function and Some other Functions
+    vector<int> v2(2, 100);            //{100,100}
+    v2.insert(v2.begin() + 1, 300);    //{100,300,100}
+    v2.insert(v2.begin() + 1, 2, 300); //{100,300,300,100}
+
+    v.size(); // returns the size of the vector
 }
