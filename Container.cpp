@@ -5,6 +5,7 @@ void PairsExplained();
 void Vectors_Explained();
 void Lists_Explained();
 void Deque_Explained();
+void Stack_Explained();
 
 int main()
 {
@@ -87,4 +88,23 @@ void Deque_Explained()
     auto d1 = {1, 2, 3, 4, 5};
     // rest functions are same as vector.
     // push_back, pop_back, push_front, pop_front, insert, erase, clear, empty etc.....
+}
+
+/*----------------------------Stack------------------------------*/
+
+void Stack_Explained()
+{
+    stack<int> s1;
+    s1.push(1);    // {1}
+    s1.push(2);    // {1,2}
+    s1.push(3);    // {1,2,3}
+    s1.push(4);    // {1,2,3,4}
+    s1.emplace(5); // {1,2,3,4,5}
+
+    s1.top(); // returns the top element of the stack // prints 5
+    s1.pop(); // removes the top element of the stack // {1,2,3,4}
+
+    // push, pop, top are the main functions of stack and O(1) time complexity.
+    // Indexing does not work in stack.
+    // s1[0]; // Error
 }
