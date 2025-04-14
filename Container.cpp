@@ -3,6 +3,8 @@ using namespace std;
 
 void PairsExplained();
 void Vectors_Explained();
+void Lists_Explained();
+void Deque_Explained();
 
 int main()
 {
@@ -59,5 +61,30 @@ void Vectors_Explained()
     v2.insert(v2.begin() + 1, 300);    //{100,300,100}
     v2.insert(v2.begin() + 1, 2, 300); //{100,300,300,100}
 
-    v.size(); // returns the size of the vector
+    v.size();      // returns the size of the vector
+    v2.pop_back(); // removes the last element  //{100}
+    vector<int> v3, v4;
+    v3.swap(v4); // swaps the contents of v3 and v4
+    v.clear();   // clears the vector
+    v.empty();   // returns true if the vector is empty
+}
+
+/*----------------------------Lists------------------------------*/
+
+void Lists_Explained()
+{
+    list<int> l1;
+    auto l1 = {1, 2, 3, 4, 5};
+    // rest functions are same as vector.
+    // push_back, pop_back, push_front, pop_front, insert, erase, clear, empty etc.....
+}
+
+/*----------------------------Deque------------------------------*/
+
+void Deque_Explained()
+{
+    deque<int> d1;
+    auto d1 = {1, 2, 3, 4, 5};
+    // rest functions are same as vector.
+    // push_back, pop_back, push_front, pop_front, insert, erase, clear, empty etc.....
 }
