@@ -6,6 +6,7 @@ void Vectors_Explained();
 void Lists_Explained();
 void Deque_Explained();
 void Stack_Explained();
+void Queue_Explained();
 
 int main()
 {
@@ -107,4 +108,26 @@ void Stack_Explained()
     // push, pop, top are the main functions of stack and O(1) time complexity.
     // Indexing does not work in stack.
     // s1[0]; // Error
+    // Stack is LIFO (Last In First Out) data structure.
+}
+
+/*----------------------------Queue------------------------------*/
+
+void Queue_Explained()
+{
+    queue<int> q1;
+    q1.push(1);    // {1}
+    q1.push(2);    // {1,2}
+    q1.push(3);    // {1,2,3}
+    q1.push(4);    // {1,2,3,4}
+    q1.emplace(5); // {1,2,3,4,5}
+
+    q1.front(); // returns the front element of the queue // prints 1
+    q1.back();  // returns the back element of the queue  // prints 5
+    q1.pop();   // removes the front element of the queue // {2,3,4,5}
+
+    // push, pop, front and back are the main functions of queue and O(1) time complexity.
+    // Indexing does not work in queue.
+    // q1[0]; // Error
+    // Queue is FIFO (First In First Out) data structure.
 }
