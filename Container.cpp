@@ -56,7 +56,7 @@ void Vectors_Explained()
 
     vector<int> v = {1, 2, 3, 4, 5};
     v.erase(v.begin() + 2);                // {1,2,4,5}
-    v.erase(v.begin() + 2, v.begin() + 4); // {1,2,5}    // [begin, end)
+    v.erase(v.begin() + 2, v.begin() + 4); // {1,2}    // [begin, end) erases elements from start up to end, but NOT including, end
 
     // Insertion Function and Some other Functions
     vector<int> v2(2, 100);            //{100,100}

@@ -36,3 +36,6 @@ Makefile
 
 # Logs
 *.log
+#Test_Runner
+*test.cpp
+*test
