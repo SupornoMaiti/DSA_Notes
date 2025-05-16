@@ -7,6 +7,8 @@ void Lists_Explained();
 void Deque_Explained();
 void Stack_Explained();
 void Queue_Explained();
+void PriorityQueue_Explained();
+void Set_Explained();
 
 int main()
 {
@@ -130,4 +132,53 @@ void Queue_Explained()
     // Indexing does not work in queue.
     // q1[0]; // Error
     // Queue is FIFO (First In First Out) data structure.
+}
+void priorityQueue_Explained()
+{
+    priority_queue<int> pq1;
+    pq1.push(1);    // {1}
+    pq1.push(2);    // {2,1}
+    pq1.push(3);    // {3,2,1}
+    pq1.push(4);    // {4,3,2,1}
+    pq1.emplace(5); // {5,4,3,2,1}
+
+    pq1.top(); // returns the top element of the queue // prints 5
+    pq1.pop(); // removes the top element of the queue // {4,3,2,1}
+
+    // push, pop and top are the main functions of priority queue.
+    // push and pop are O(log n) time complexity.
+    // top is O(1) time complexity.
+    // How minimum priority queue is declared
+    priority_queue<int, vector<int>, greater<int>> pq2;
+    pq2.push(5);  // {5}
+    pq2.push(2);  // {2,5}
+    pq2.push(8);  // {2,5,8}
+    pq2.push(10); // {2,5,8,10}
+
+    pq2.top(); // prints 2
+}
+
+/*----------------------------Set------------------------------*/
+
+void Set_Explained()
+{
+    set<int> s1;   // set is a collection of unique and ordered elements
+    s1.insert(1);  // {1}
+    s1.insert(2);  // {1,2}
+    s1.insert(3);  // {1,2,3}
+    s1.insert(4);  // {1,2,3,4}
+    s1.emplace(5); // {1,2,3,4,5}
+
+    // rest functions are same as vector.
+
+    auto it = s1.find(3);  // returns the iterator to the element 3
+    s1.erase(3);           // removes the element 3 from the set//{1,2,4,5}
+    int cnt = s1.count(3); // returns the number of occurrences of 3 in the set (0 or 1)
+
+    //{1,2,3,4,5}
+    auto it1 = s1.find(2);
+    auto it2 = s1.find(4);
+    s1.erase(it1, it2); // removes the elements from it1 to it2 (it2 is not included) // {1,4,5}
+
+    // study about lower_bound and upper_bound
 }
