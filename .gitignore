@@ -39,3 +39,5 @@ Makefile
 #Test_Runner
 *test.cpp
 *test
+#pdf notes
+/PDF_Notes
