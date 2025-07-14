@@ -15,7 +15,7 @@ void unorderedSet_Explained();
 int main()
 {
 
-        return 0;
+    return 0;
 }
 
 /*----------------------------Pairs------------------------------*/
@@ -209,4 +209,70 @@ void unorderedSet_Explained()
 
     // all operations are O(1) time complexity.its more efficient than set..
     // in rarest of rare cases, it can be O(n) time complexity.
+}
+
+/*----------------------------Map------------------------------*/
+
+void map_Explained()
+{
+    // map is a collection of key-value pairs where keys are unique and ordered
+    // keys and values data type can be different and can be any data type
+    map<int, int> m1;
+    m1[1] = 2;         // {1:2}
+    m1.insert({2, 3}); // {1:2, 2:3} curly braces are used to insert a pair
+    m1.emplace(3, 4);  // {1:2, 2:3, 3:4} curly braces aren't used
+
+    map<int, pair<int, int>> m2; // map of pairs
+    m2[2] = {1, 2};
+    map<pair<int, int>, int> m3; // map of pairs as keys and int as value
+    m3[{1, 2}] = 3;
+    map<string, int> age;
+
+    age["Suporno"] = 19;
+    age["Maa"] = 45;
+    age["Dad"] = 55;
+
+    for (auto it : age)
+    {
+        cout << "name :" << it.first << "\t" << "age : " << it.second << "\n";
+    }
+
+    auto it = m1.find(2);         // returns the iterator to the element with key 2
+    cout << (*it).second << endl; // prints the value of the key 2
+
+    m1.find(5); // returns the iterator to the end of the map if key 5 is not found
+
+    // erase,swap,size,empty are same as vector.
+}
+
+void multimap_Explained()
+{
+    // multimap is a collection of key-value pairs where keys can be duplicate and ordered
+    // keys and values data type can be different and can be any data type
+    multimap<int, int> mm1;
+    mm1.insert({1, 2}); // {1:2}
+    mm1.insert({1, 3}); // {1:2, 1:3} duplicate key allowed
+    mm1.insert({2, 4}); // {1:2, 1:3, 2:4}
+
+    auto it = mm1.find(1);        // returns the iterator to the first element with key 1
+    cout << (*it).second << endl; // prints the value of the first key 1
+
+    mm1.erase(1); // removes all occurrences of key 1 from the multimap
+}
+
+void unorderedMap_Explained()
+{
+    // unordered_map is a collection of key-value pairs where keys are unique and unordered
+    // keys and values data type can be different and can be any data type
+    unordered_map<int, int> um1;
+    um1[1] = 2;         // {1:2}
+    um1.insert({2, 3}); // {1:2, 2:3} curly braces are used to insert a pair
+    um1.emplace(3, 4);  // {1:2, 2:3, 3:4} curly braces aren't used
+
+    auto it = um1.find(2);        // returns the iterator to the element with key 2
+    cout << (*it).second << endl; // prints the value of the key 2
+
+    um1.find(5); // returns the iterator to the end of the map if key 5 is not found
+
+    // erase,swap,size,empty are same as vector.
 }
