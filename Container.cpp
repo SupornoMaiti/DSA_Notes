@@ -9,14 +9,13 @@ void Stack_Explained();
 void Queue_Explained();
 void PriorityQueue_Explained();
 void Set_Explained();
+void multiset_Explained();
+void unorderedSet_Explained();
 
 int main()
 {
-    PairsExplained();
-    // PairsExplained1(); Not to be uncommented
-    Vectors_Explained();
 
-    return 0;
+        return 0;
 }
 
 /*----------------------------Pairs------------------------------*/
@@ -78,7 +77,7 @@ void Vectors_Explained()
 void Lists_Explained()
 {
     list<int> l1;
-    auto l1 = {1, 2, 3, 4, 5};
+    l1 = {1, 2, 3, 4, 5};
     // rest functions are same as vector.
     // push_back, pop_back, push_front, pop_front, insert, erase, clear, empty etc.....
 }
@@ -88,7 +87,7 @@ void Lists_Explained()
 void Deque_Explained()
 {
     deque<int> d1;
-    auto d1 = {1, 2, 3, 4, 5};
+    d1 = {1, 2, 3, 4, 5};
     // rest functions are same as vector.
     // push_back, pop_back, push_front, pop_front, insert, erase, clear, empty etc.....
 }
@@ -181,4 +180,33 @@ void Set_Explained()
     s1.erase(it1, it2); // removes the elements from it1 to it2 (it2 is not included) // {1,4,5}
 
     // study about lower_bound and upper_bound
+}
+
+void multiset_Explained()
+{
+    // all are same as set but multiset allows duplicate elements.
+    multiset<int> ms;
+    ms.insert(1); // {1}
+    ms.insert(1);
+    ms.insert(1);
+
+    ms.erase(1);          // removes all occurrences of 1 from the multiset
+    ms.erase(ms.find(1)); // removes only one occurrence of 1 from the multiset
+}
+void unorderedSet_Explained()
+{
+    // unordered_set is a collection of unique and unordered elements
+    unordered_set<int> us;
+    us.insert(1);  // {1}
+    us.insert(3);  // {1,3}
+    us.insert(5);  // {1,3,5}
+    us.insert(6);  // {1,3,5,6}
+    us.emplace(9); // {1,3,5,6,9}
+
+    auto it = us.find(3);  // returns the iterator to the element 3
+    us.erase(3);           // removes the element 3 from the set//{1,2,4,5}
+    int cnt = us.count(3); // returns the number of occurrences of 3 in the set (0 or 1)
+
+    // all operations are O(1) time complexity.its more efficient than set..
+    // in rarest of rare cases, it can be O(n) time complexity.
 }
